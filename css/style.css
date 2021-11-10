@@ -1,58 +1,91 @@
 @charset "UFT-8";
 
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;1,400&display=swap');
+
 *{
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
-    
+    font-family: 'Lora', sans-serif;   
+    border: 0;
 }
 
 :root{
-    --cor01: rgba(121, 164, 228, 0.842);
-    --cor02: rgba(182, 213, 248, 0.842);
+    --fundo: #95ccff60;
+    --titulo: #032449;
+    --subitulo: #043E80;
 }
 
 body, html{
     width: 100%;
     height: 100%;
-    background-color: #F0F8FF;
+    background-color: rgba(166, 226, 241, 0.205);
     font-size: 1em;
-    color: #59429d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+
+/*Inicio*/
 .content{
     border: 1px solid;
-    width: 450px;
+    width: 500px;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.199);
-    margin-left: auto;
-    margin-right: auto;
-    margin: auto;
-
 }
 
 
-/* Elementos com o ID "titulo" */
+/*Título do fomulário*/
+
 .parte-cima{
     width: 100%;
     padding-bottom: 10px;
 }
 
 #titulo {
-    color: #380B61;
+    color: var(--titulo); 
     text-align: center;
-    
+    font-weight: bolder;
 } 
 
 #subtitulo {
-    color: #380B61;
+    color: var(--subitulo);
     text-align: center;
+    font-weight: bold;
 } 
 
-fieldset{
-    border: 0;
+
+
+
+/*Entrada de dados*/
+fieldset.grupo {
+    padding-top: 5px;
+    padding-bottom: 35px;
 }
+fieldset.grupo .inputCampo {
+    float:  left;
+    margin-right: 1em;
+    border: 1px solid #59429d;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    padding: 0.3em;
+    
+}
+
+.entradaDados{
+    border: 1px solid;
+    width: 200px;
+    height: 20px;
+}
+
+.entradaDados:hover{
+    background-color: #0756b13a;
+}
+
+
 
 
 
@@ -60,80 +93,147 @@ fieldset{
 input, select, textarea, button {
     font-family: sans-serif;
     font-size: 1em;
-    color: #59429d;
     border-radius: 5px;
 }
 
-.grupo:before, .grupo:after {
-    display: table;
+
+
+
+/*TECNOLOGIAS QUE DESENVOLVE*/
+.desenvolve {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 35px;
+    color: var(--subitulo);
+
 }
 
-/* Elementos de classe "grupo" no estado da pseudoclasse "after" */
-.grupo:after {
-    clear: both;
-}
-
-/* Elementos de classe "campo" */
-.campo {
-    margin-bottom: 20px;
-}
-
-/* Elementos de classe "campo" de tag <label> */
-.campo label {
-    margin-bottom: 10px;
-    color: #59429d;
+.desenvolve .text{
     display: block;
+    font-weight: bold;
+    margin-bottom: 7px ;
+    color: var(--titulo);
 }
 
-/* Elementos de classe "campo" ou "grupo" de tag <fieldset> */
-fieldset.grupo .campo {
-    float:  left;
-    margin-right: 1em;
+
+
+
+/*Select*/
+.senioridade{
+    padding-bottom: 35px;
 }
 
-/* Elementos de classe "campo" das tags <input> com atributo text e email, da tag <select> e da tag <textarea>*/
-.campo input[type="text"], .campo input[type="email"], .campo select, .campo textarea {
+#txtSenioridade{
+    font-weight: bold;
+    color: var(--titulo);
+}
+
+.senioridade select{
+    color: var(--subitulo);
+}
+
+
+
+
+
+/*Tecnologias*/
+#tecnologias-check{
+    padding-bottom: 35px;
+}
+
+#tecnologias-check #txt{
+    font-weight: bold;
+    color: var(--titulo);
+    display: block;
+    margin-bottom:0.5em;
+}
+
+#tecnologias-check label{
+    margin-left: 3px;
+    color: var(--subitulo);
+}
+
+#tecnologias-check input{
+    cursor: pointer;
+}
+
+
+
+
+/*descrição*/
+
+.campo #txt{
+    font-weight: bold;
+    color: var(--titulo);
+}
+
+.campo textarea {
     padding: 0.2em;
-    border: 1px solid #59429d;
+    border: 1px solid var(--titulo);
     box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
     display: block;
+    cursor: pointer;
+    color: var(--subitulo);
+    
 }
 
-/* Elementos de classe "campo" de tag <select> e <option>*/
-.campo select option {
-    padding-right: 1em;
+textarea:focus {
+    background: var(--fundo);
 }
 
-/* Elemento de classe "campo" com tag <input>, <select> e <textarea> tocas com estado da pseudoclasse "focus"*/
-.campo input:focus, .campo select:focus, .campo textarea:focus {
-    background: #E0E0F8;
+
+/* Botão */
+
+.botaoultimo{
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
 }
 
-/* Elemento de classe "botao" */
 .botao {
     font-size: 1.2em;
-    background: #59429d;
+    background: var(--subitulo);
     border: 0;
-    margin-bottom: 1em;
-    color: #ffffff;
+    color: white;
     padding: 0.2em 0.6em;
     box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
     text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
-    position: absolute;
-    top: 90%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
 }
 
-/* Elemento de classe "botao" com o estado da pseudoclasse "hover" */
 .botao:hover {
-    background: #CCBBFF;
+    background: var(--titulo);
     box-shadow: inset 2px 2px 2px rgba(0,0,0,0.2);
     text-shadow: none;
 }
 
-/* Elementos de classe botão e de tag <select> */
-.botao, select{
+.botao{
     cursor: pointer;
 }
+
+
+
+
+/* .grupo:before, .grupo:after {
+    display: table;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
